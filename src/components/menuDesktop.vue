@@ -1,8 +1,11 @@
 <template>
     <b-navbar type="dark" variant="dark" class="transparent-navbar">
       <b-navbar-brand href="#">
-        <img src="@/assets/icons/logo.png" alt="Logo" class="d-inline-block align-top" height="30" />
-        Giovanelli Tardini
+        <!-- <img src="@/assets/icons/logo.png" alt="Logo" class="d-inline-block align-top" height="30" /> -->
+
+                GIOVANELLI & TARDINI
+
+        
       </b-navbar-brand>
       
       <b-navbar-nav class="d-flex w-100 justify-content-between align-items-center">
@@ -10,7 +13,7 @@
           <b-nav-item class="m-2" href="#">INICIO</b-nav-item>
           <b-nav-item class="m-2" href="#">SOBRE NOSOTROS</b-nav-item>
           <b-nav-item class="m-2" href="#">ÁREAS DE PRÁCTICA</b-nav-item>
-          <b-nav-item class="m-2" href="#">CONTACTO</b-nav-item>
+          <b-nav-item class="m-2" href="#contacto">CONTACTO</b-nav-item>
         </div>
   
         <div class="d-flex align-items-center">

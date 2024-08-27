@@ -1,15 +1,15 @@
 <template>
     <b-navbar toggleable="lg" type="dark" variant="dark">
       <b-navbar-brand href="#">
-        <img src="@/assets/icons/logo.png" alt="Logo" class="d-inline-block align-top" height="30" />
-        Giovanelli Tardini
+        <!-- <img src="@/assets/icons/logo.png" alt="Logo" class="d-inline-block align-top" height="30" /> -->
+        GIOVANELLI & TARDINI
       </b-navbar-brand>
   
       <!-- Contenedor para el texto "ES | EN" y el toggle -->
       <div class="navbar-right">
         <span class="language-options">ES | EN</span>
         <!-- Toggle para mobile (hamburguesa y cruz) -->
-        <b-navbar-toggle @click="toggleMenu">
+        <b-navbar-toggle target="nav-bar" @click="toggleMenu">
         </b-navbar-toggle>
       </div>
   
@@ -17,10 +17,7 @@
       <div class="nav-bar" :class="{'mobile-menu': true, 'show': isMenuOpen}" id="nav-collapse">
         <b-navbar-nav>
           <b-nav-item class="text-right pr-3 X" href="#" @click="toggleMenu">X</b-nav-item>
-          <b-nav-item class="m-2" href="#" @click="toggleMenu">INICIO</b-nav-item>
-          <b-nav-item class="m-2" href="#" @click="toggleMenu">SOBRE NOSOTROS</b-nav-item>
-          <b-nav-item class="m-2" href="#" @click="toggleMenu">ÁREAS DE PRÁCTICA</b-nav-item>
-          <b-nav-item class="m-2" href="#" @click="toggleMenu">CONTACTO</b-nav-item>
+          <b-nav-item v-for="i in menuOptions" :key="i.title" class="ml-3 mt-1" :href="i.href" @click="toggleMenu">{{i.title}}</b-nav-item>
         </b-navbar-nav>
       </div>
     </b-navbar>
@@ -32,6 +29,11 @@
       return {
         isMenuOpen: false, // Controla el estado del menú móvil
       };
+    },
+    computed:{
+        menuOptions(){
+            return this.$store.state.menuOptions;
+        }
     },
     methods: {
       toggleMenu() {

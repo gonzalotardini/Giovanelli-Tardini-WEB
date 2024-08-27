@@ -1,5 +1,5 @@
 <template>
-  <div class="contacto">
+  <div id="contacto" class="contacto">
     <b-container class="pt-5 pb-5">
       <h1 class="text-center pb-5">Contacto</h1>
       <b-row>
@@ -23,66 +23,7 @@
           </div>
         </b-col>
         <b-col md="5" sm="12">
-          <b-form @submit="onSubmit">
-            <b-row>
-              <b-col md="6" xs="12">
-                <b-form-group
-                  label="Nombre"
-                  label-for="input-nombreaaaa"
-                >
-                  <b-form-input
-                    id="input-nombre"
-                    v-model="form.nombre"
-                    required
-                    placeholder="Nombre"
-                  ></b-form-input>
-                </b-form-group>
-              </b-col>
-
-              <b-col md="6" xs="12">
-                <b-form-group
-                  label="Apellido"
-                  label-for="input-apellido"
-                >
-                  <b-form-input
-                    id="input-apellido"
-                    v-model="form.apellido"
-                    required
-                    placeholder="Apellido"
-                  ></b-form-input>
-                </b-form-group>
-              </b-col>
-            </b-row>
-
-            <b-form-group
-              label="Email"
-              label-for="input-email"
-            >
-              <b-form-input
-                id="input-email"
-                type="email"
-                v-model="form.email"
-                required
-                placeholder="nombre@ejemplo.com"
-              ></b-form-input>
-            </b-form-group>
-
-            <b-form-group
-              label="Consulta"
-              label-for="input-consulta"
-            >
-              <b-form-textarea
-                id="input-consulta"
-                v-model="form.consulta"
-                placeholder="Escribe tu consulta aquí"
-                rows="5"
-              ></b-form-textarea>
-            </b-form-group>
-
-            <b-button class="btn-block" type="submit" variant="dark"
-              >Enviar</b-button
-            >
-          </b-form>
+          <contactForm/>
         </b-col>
       </b-row>
     </b-container>
@@ -90,9 +31,11 @@
 </template>
 
 <script>
+import contactForm from "./contactForm.vue";
+
 export default {
   name: "contact",
-  components: {},
+  components: {contactForm},
   data() {
     return {
       form: {
@@ -101,6 +44,7 @@ export default {
         email: "",
         consulta: "",
       },
+      isDesktop: window.innerWidth >= 992
     };
   },
   methods:{
@@ -144,6 +88,17 @@ export default {
 
 .contacto {
   background-color: #f2f2f2;
+}
+
+.border {
+  border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+  border-radius: 7px !important;
+    /* background-color: white; */
+}
+
+.contact-btn {
+ background-color: #006b93 !important;
+ border-color: #006b93 !important;
 }
 
 </style>

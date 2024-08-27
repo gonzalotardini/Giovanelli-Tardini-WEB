@@ -5,7 +5,13 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    message: 'Hola desde Vuex!'
+    message: 'Hola desde Vuex!',
+    menuOptions: [
+      {title: "INICIO", href: "#", action:""},
+      {title: "SOBRE NOSOTROS", href: "#", action:""},
+      {title: "ÁREAS DE PRÁCTICA", href: "#", action:""},
+      {title: "CONTACTO", href: "#contacto", action:""},
+    ]
   },
   mutations: {
     setMessage(state, newMessage) {
@@ -20,6 +26,9 @@ export default new Vuex.Store({
   getters: {
     getMessage(state) {
       return state.message;
+    },
+    getIsDesktop(){
+      return window.innerWidth >= 992
     }
   }
 });

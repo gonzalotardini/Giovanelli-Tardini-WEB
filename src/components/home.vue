@@ -2,6 +2,7 @@
   <div>
     <b-carousel
       id="carousel"
+      fade
       v-model="slide"
       :interval="4000"
       controls
@@ -11,13 +12,27 @@
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
     >
-      <!-- Text slides with image -->
-      <b-carousel-slide class="img-fluid"
-        :img-src="require('@/assets/socios.jpg')"
-      ></b-carousel-slide>
-
       <!-- Slides with custom text -->
-      <b-carousel-slide clas="img-fluid" :img-src="require('@/assets/torreView.jpg')">
+      <b-carousel-slide
+        clas="img-fluid"
+        :img-src="require('@/assets/torreView4.jpg')"
+      >
+        <div class="div-h">
+          <h1>Giovanelli & Tardini</h1>
+          <h4>Abogados</h4>
+          <!-- <h4>
+            Especialistas en accidentes de tránsito, ART, representación y
+            consumo.
+          </h4> -->
+          <b-btn href="#contacto" variant="outline-light mt-5"> CONTACTANOS </b-btn>
+
+        </div>
+      </b-carousel-slide>
+
+      <b-carousel-slide
+        class="img-fluid"
+        :img-src="require('@/assets/socios.jpg')"
+      >
       </b-carousel-slide>
 
       <!-- Slides with image only -->
@@ -48,7 +63,7 @@
   </div>
 </template>
   
-  <script>
+<script>
 export default {
   data() {
     return {
@@ -67,14 +82,49 @@ export default {
 };
 </script>
 <style scoped>
->>>.img-fluid {
+>>> .img-fluid {
   max-height: 700px !important; /* Limita la altura máxima de la imagen */
   width: 100% !important; /* Asegura que la imagen mantenga su ancho completo */
   object-fit: cover !important; /* Ajusta la imagen para que mantenga proporciones dentro del espacio */
 }
+>>> img {
+  filter: brightness(0.4); /* Reduce el brillo, oscureciendo la imagen */
+}
+>>> .carousel-caption {
+  top: 30% !important;
+  transform: translateY(-30%) !important;
+  bottom: initial !important;
+}
+
+h1 {
+  font-size: 65px;
+}
+
+h3 {
+  font-size: 40px;
+}
+
+h4 {
+    font-size: 55px;
+    font-weight: 200;
+
+}
+
 @media (max-width: 576px) {
-  >>>.img-fluid {
+  >>> .img-fluid {
     height: 290px !important; /* Ajusta según lo que consideres adecuado para móviles */
+  }
+  h1 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  h4 {
+    font-size: 25px;
+    font-weight: 200;
   }
 }
 </style>

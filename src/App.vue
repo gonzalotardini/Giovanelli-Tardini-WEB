@@ -7,6 +7,7 @@
     <menuMobile v-else />
     <home />
     <areas />
+    <clientes/>
     <conctact />
     <footerr />
   </div>
@@ -18,6 +19,7 @@ import menuMobile from './components/menuMobile.vue';
 import home from './components/home.vue';
 import areas from './components/areas.vue';
 import conctact from './components/contact.vue';
+import clientes from './components/clientes.vue';
 import footerr from './components/footer.vue';
 export default {
   name: 'App',
@@ -27,7 +29,8 @@ export default {
     home,
     areas,
     conctact,
-    footerr
+    footerr,
+    clientes
   },
   data() {
     return {
