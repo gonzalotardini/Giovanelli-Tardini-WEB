@@ -1,5 +1,5 @@
 <template>
-    <b-container class="my-5" >
+    <b-container id="areasDePractica" class="my-5" >
       <h1 class="text-center my-5">Áreas de Práctica</h1>
         <b-row class="pb-5">
             <b-col md="4" sm="12" class="text-center">

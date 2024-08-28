@@ -7,9 +7,10 @@ export default new Vuex.Store({
   state: {
     message: 'Hola desde Vuex!',
     menuOptions: [
-      {title: "INICIO", href: "#", action:""},
-      {title: "SOBRE NOSOTROS", href: "#", action:""},
-      {title: "ÁREAS DE PRÁCTICA", href: "#", action:""},
+      {title: "INICIO", href: "#inicio", action:""},
+      {title: "SOBRE NOSOTROS", href: "#sobreNosotros", action:""},
+      {title: "ÁREAS DE PRÁCTICA", href: "#areasDePractica", action:""},
+      {title: "NUESTROS CLIENTES", href: "#nuestrosClientes", action:""},
       {title: "CONTACTO", href: "#contacto", action:""},
     ]
   },

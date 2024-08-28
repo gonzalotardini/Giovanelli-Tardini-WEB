@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="inicio">
     <b-carousel
       id="carousel"
       fade

@@ -12,7 +12,7 @@
           <p class="m-0 ml-1">{{client.title}}</p>
         </b-row>
         <i v class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
-        ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+        ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
         <br />
         <span class="text-left">{{ client.description }}</span>
       </b-card-text>

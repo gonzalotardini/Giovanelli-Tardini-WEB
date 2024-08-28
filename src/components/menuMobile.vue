@@ -31,9 +31,9 @@
       };
     },
     computed:{
-        menuOptions(){
-            return this.$store.state.menuOptions;
-        }
+          menuOptions(){
+              return this.$store.state.menuOptions;
+          }
     },
     methods: {
       toggleMenu() {

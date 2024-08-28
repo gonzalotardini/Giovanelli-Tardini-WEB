@@ -1,5 +1,5 @@
 <template>
-  <b-container class="py-5" fluid>
+  <b-container id="nuestrosClientes" class="py-5" fluid>
     <h1 class="text-center pt-4 pb-5">Nuestros Clientes</h1>
     <b-row>
       <b-carousel

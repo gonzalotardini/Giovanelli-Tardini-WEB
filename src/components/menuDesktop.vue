@@ -10,10 +10,7 @@
       
       <b-navbar-nav class="d-flex w-100 justify-content-between align-items-center">
         <div class="mx-auto d-flex justify-content-center">
-          <b-nav-item class="m-2" href="#">INICIO</b-nav-item>
-          <b-nav-item class="m-2" href="#">SOBRE NOSOTROS</b-nav-item>
-          <b-nav-item class="m-2" href="#">ÁREAS DE PRÁCTICA</b-nav-item>
-          <b-nav-item class="m-2" href="#contacto">CONTACTO</b-nav-item>
+          <b-nav-item v-for="i in menuOptions" :key="i.title" class="ml-3 mt-1" :href="i.href" @click="toggleMenu">{{i.title}}</b-nav-item>
         </div>
   
         <div class="d-flex align-items-center">
@@ -27,6 +24,11 @@
   
   <script>
   export default {
+    computed:{
+      menuOptions(){
+            return this.$store.state.menuOptions;
+        }
+    },
     methods: {
       changeLanguage() {
         // Lógica para cambiar el idioma

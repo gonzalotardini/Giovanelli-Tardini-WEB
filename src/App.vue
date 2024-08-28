@@ -48,6 +48,9 @@ export default {
 </script>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
 #app {
   font-family: Rubik, Helvetica, Arial, sans-serif;
 }
@@ -68,7 +71,6 @@ export default {
   border-radius: 50px;
   text-align: center;
   font-size: 30px;
-  box-shadow: 2px 2px 3px #999;
   z-index: 100;
 }
 
