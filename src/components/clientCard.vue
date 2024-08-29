@@ -8,7 +8,7 @@
     >
       <b-card-text>
         <b-row align-v="center" class="text-center justify-content-center">
-          <img src="../assets/perfil.png" alt="">
+          <b-avatar text="BB"></b-avatar>
           <p class="m-0 ml-1">{{client.title}}</p>
         </b-row>
         <i v class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
