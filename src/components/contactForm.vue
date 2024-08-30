@@ -2,8 +2,7 @@
   <div class="contacto">
     <b-form
       :class="isDesktop ? 'px-4' : 'px-2'"
-      class="border py-4"
-      @submit="onSubmit"
+      class="border py-4"      
     >
       <h4 class="text-center mb-4">Envianos tu consulta</h4>
       <b-row>
@@ -16,7 +15,7 @@
 
               <b-form-input
                 id="input-nombre"
-                v-model="form.nombre"
+                v-model="formData.nombre"
                 required
                 placeholder="Nombre"
               ></b-form-input>
@@ -33,7 +32,7 @@
 
               <b-form-input
                 id="input-apellido"
-                v-model="form.apellido"
+                v-model="formData.apellido"
                 required
                 placeholder="Apellido"
               ></b-form-input>
@@ -50,7 +49,7 @@
           <b-form-input
             id="input-email"
             type="email"
-            v-model="form.email"
+            v-model="formData.email"
             required
             placeholder="nombre@ejemplo.com"
           >
@@ -61,37 +60,60 @@
       <b-form-group label-for="input-consulta">
         <b-form-textarea
           id="input-consulta"
-          v-model="form.consulta"
+          v-model="formData.consulta"
           placeholder="Escribe tu consulta aquí"
           rows="5"
         ></b-form-textarea>
       </b-form-group>
 
-      <b-button class="btn-block" type="submit" variant="dark">ENVIAR</b-button>
+      <b-button class="btn-block" variant="dark" @click="sendMail()">ENVIAR</b-button>
     </b-form>
   </div>
 </template>
   
   <script>
+
+import axios from "axios";
+
 export default {
   name: "contactForm",
   components: {},
   data() {
     return {
-      form: {
-        nombre: "",
-        apellido: "",
+      formData: {
         email: "",
+        nombre: "",
+        apellido: "",       
         consulta: "",
       },
       isDesktop: window.innerWidth >= 992,
     };
   },
   methods: {
-    onSubmit() {
-      var hola = "";
-      return hola;
+    sendMail() {
+      debugger;
+      var emailData= {
+        to: "gonzalotardini@gmail.com",
+        subject: "CONSULTA EN FORMULARIO WEB DE: " + this.formData.nombre + " " + this.formData.apellido,
+        text: this.getEmailText(this.formData)
+        // text: this.getEmailText(this.formData)
+      }
+      axios.post('https://api-mail-wheat.vercel.app/send-email', emailData)
+        .then(response => {
+          console.log('Correo enviado:', response.data);
+        })
+        .catch(error => {
+          console.error('Error al enviar correo:', error);
+        });
     },
+    getEmailText(formData){
+      var text = "NOMBRE: " + formData.nombre + " APELLIDO: " + formData.apellido + "\n";
+      text = text + "EMAIL: " + formData.email + "\n";
+      text = text + "CONSULTA: \n";
+      text = text + formData.consulta;
+      console.log(text);
+      return text;
+    }
   },
 };
 </script>

@@ -74,7 +74,7 @@ export default {
         {
           title: "Abel Ojeda",
           description:
-            "la verdad unos genios son de confianza, trabajan con profesionales en todo aspecto te ponen en contexto cada paso en tu caso, en menos de 40 días me abonaron lo justo a mi caso, ya tiene un cliente fijo y para recomendar a mas gente🙌🏻❤️…",
+            "la verdad unos genios son de confianza, trabajan con profesionales en todo aspecto te ponen en contexto cada paso en tu caso, en menos de 40 días me abonaron lo justo a mi caso, ya tiene un cliente fijo y para recomendar a mas gente ",
           stars: 5,
           variant: "info"
         },

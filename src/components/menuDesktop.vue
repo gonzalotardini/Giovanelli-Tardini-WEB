@@ -1,5 +1,5 @@
 <template>
-    <b-navbar type="dark" variant="dark" class="transparent-navbar">
+    <b-navbar sticky type="dark" variant="dark" class="transparent-navbar">
       <b-navbar-brand href="#">
         <!-- <img src="@/assets/icons/logo.png" alt="Logo" class="d-inline-block align-top" height="30" /> -->
 
