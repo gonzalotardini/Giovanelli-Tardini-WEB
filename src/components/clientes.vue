@@ -27,7 +27,14 @@
       </b-carousel>
     </b-row>
     <div class="text-center">
-      <b-btn href="https://www.google.com.ar/maps/place/Estudio+Giovanelli+Tardini+%26+Asociados/@-36.8433184,-64.1911268,10z/data=!4m18!1m9!3m8!1s0xc72fea9ea35abcb:0xa0b1ebfead24ba7e!2sEstudio+Giovanelli+Tardini+%26+Asociados!8m2!3d-38.45155!4d-63.5989957!9m1!1b1!16s%2Fg%2F11kqv_x7h0!3m7!1s0xc72fea9ea35abcb:0xa0b1ebfead24ba7e!8m2!3d-38.45155!4d-63.5989957!9m1!1b1!16s%2Fg%2F11kqv_x7h0?entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" size="lg" variant="outline-light"> Mirá nuestra reseñas </b-btn>
+      <b-btn
+        href="https://www.google.com.ar/maps/place/Estudio+Giovanelli+Tardini+%26+Asociados/@-36.8433184,-64.1911268,10z/data=!4m18!1m9!3m8!1s0xc72fea9ea35abcb:0xa0b1ebfead24ba7e!2sEstudio+Giovanelli+Tardini+%26+Asociados!8m2!3d-38.45155!4d-63.5989957!9m1!1b1!16s%2Fg%2F11kqv_x7h0!3m7!1s0xc72fea9ea35abcb:0xa0b1ebfead24ba7e!8m2!3d-38.45155!4d-63.5989957!9m1!1b1!16s%2Fg%2F11kqv_x7h0?entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank"
+        size="lg"
+        variant="outline-light"
+      >
+        Mirá nuestra reseñas
+      </b-btn>
     </div>
   </b-container>
 </template>
@@ -48,36 +55,42 @@ export default {
           description:
             "Muy recomendable! La verdad unos genios! Trabajan de manera profesional y eficiente, resolvieron mi caso muy rápido y prolijo 👌…",
           starts: 5,
+          variant: "primary"
         },
         {
           title: "Facundo  Ahumada",
           description:
             "La verdad que son muy profesionales solucionaron mi caso muy rápido y pude dar solución a mi siniestro. Muchas gracias a los señores abogado. Excelente atención altamente recomendable. Sin dudar",
           stars: 5,
+          variant: "secondary"
         },
         {
           title: "Verónica Russo",
           description:
             "Excelente servicio ... te ayudan desde un lugar profesional pero también humano ... se toman el tiempo de responder sin problema y te sacan todas las dudas que puedas tener..muy agradecida",
           stars: 5,
+          variant: "success"
         },
         {
           title: "Abel Ojeda",
           description:
             "la verdad unos genios son de confianza, trabajan con profesionales en todo aspecto te ponen en contexto cada paso en tu caso, en menos de 40 días me abonaron lo justo a mi caso, ya tiene un cliente fijo y para recomendar a mas gente🙌🏻❤️…",
           stars: 5,
+          variant: "info"
         },
         {
           title: "Pablo Gronski",
           description:
             "Me resolvieron un caso complicado en poco tiempo y con una solución inmediata.  Excelente atención y respuestas rápidas.",
           stars: 5,
+          variant: "warning"
         },
         {
           title: "Martin Aguero",
           description:
             "Tuve un accidente vehicular en 2021. Tuve una mala asesoría. Los contacte y pese a los años que pasaron me los resolvieron en un mes y medio. Siempre informándome de la situación. La verdad son excelentes. Muchas gracias!!!",
           stars: 5,
+          variant: "danger"
         },
       ],
       isMobile: window.innerWidth <= 768,
@@ -118,7 +131,7 @@ export default {
   width: 100% !important;
 }
 .carousel-item {
-  min-height: 300px;
+  min-height: 400px;
 }
 .carousel-caption {
   justify-content: center !important ;
