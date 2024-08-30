@@ -18,6 +18,7 @@
                 v-model="formData.nombre"
                 required
                 placeholder="Nombre"
+                :disabled="sendingMail"
               ></b-form-input>
             </b-input-group>
           </b-form-group>
@@ -35,6 +36,7 @@
                 v-model="formData.apellido"
                 required
                 placeholder="Apellido"
+                :disabled="sendingMail"
               ></b-form-input>
             </b-input-group>
           </b-form-group>
@@ -52,6 +54,7 @@
             v-model="formData.email"
             required
             placeholder="nombre@ejemplo.com"
+            :disabled="sendingMail"
           >
           </b-form-input>
         </b-input-group>
@@ -63,11 +66,17 @@
           v-model="formData.consulta"
           placeholder="Escribe tu consulta aquí"
           rows="5"
+          :disabled="sendingMail"
         ></b-form-textarea>
       </b-form-group>
 
-      <b-button class="btn-block" variant="dark" @click="sendMail()">ENVIAR</b-button>
+      <b-button class="btn-block" variant="dark" @click="sendMail()" :disabled="sendingMail">
+        <b-spinner v-show="sendingMail" small></b-spinner>
+        ENVIAR</b-button>
+        <b-alert class="mt-3" variant="success" show v-show="successAlert">Tu consulta se envió correctamente. A la brevedad nos estaremos contactando con vos.</b-alert>
+        <b-alert class="mt-3" variant="danger" show v-show="errorAlert">Se ha producido un error al completar la solicitud. Por favor intentá más tarde.</b-alert>
     </b-form>
+
   </div>
 </template>
   
@@ -87,22 +96,29 @@ export default {
         consulta: "",
       },
       isDesktop: window.innerWidth >= 992,
+      sendingMail: false,
+      successAlert: false,
+      errorAlert: false
     };
   },
   methods: {
     sendMail() {
       debugger;
+      this.sendingMail = true;
       var emailData= {
         to: "gonzalotardini@gmail.com",
         subject: "CONSULTA EN FORMULARIO WEB DE: " + this.formData.nombre + " " + this.formData.apellido,
         text: this.getEmailText(this.formData)
-        // text: this.getEmailText(this.formData)
       }
       axios.post('https://api-mail-wheat.vercel.app/send-email', emailData)
         .then(response => {
           console.log('Correo enviado:', response.data);
+          this.sendingMail = false;
+          this.successAlert = true;
         })
         .catch(error => {
+          this.sendingMail = false;
+          this.errorAlert = true;
           console.error('Error al enviar correo:', error);
         });
     },
