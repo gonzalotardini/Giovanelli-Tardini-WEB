@@ -5,12 +5,12 @@
             <b-col md="4" sm="12" class="text-center">
                 <img :src="require('@/assets/icons/choque.svg')" alt="">
                 <h5>Accidentes de tránsito</h5>
-                <p>texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba </p>
+                <p>Contamos con un equipo integral de médicos y especialistas en lesiones y accidentes de tránsito. Conseguimos la compensación más justa y en el mejor tiempo posible</p>
             </b-col>
             <b-col md="4" sm="12" class="text-center">
                 <img :src="require('@/assets/icons/ART.svg')" alt="">
                 <h5>ART</h5>
-                <p>texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba </p>
+                <p>Nos aseguramos de que la ART cumpla con tu tratamiento y luchamos por obtener la mejor indemnización en el menor tiempo posible.</p>
             </b-col>
             <b-col md="4" sm="12" class="text-center">
                 <img :src="require('@/assets/icons/consumo.svg')" alt="">
