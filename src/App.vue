@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import menuDesktop from './components/menuDesktop.vue';
-import menuMobile from './components/menuMobile.vue';
+import menuDesktop from './components/menu/menuDesktop.vue';
+import menuMobile from './components/menu/menuMobile.vue';
 import home from './components/home.vue';
 import areas from './components/areas.vue';
 import conctact from './components/contact.vue';
