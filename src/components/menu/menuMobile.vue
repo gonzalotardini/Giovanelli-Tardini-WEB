@@ -16,7 +16,7 @@
       <!-- Menú desplegable para mobile -->
       <div class="nav-bar" :class="{'mobile-menu': true, 'show': isMenuOpen}" id="nav-collapse">
         <b-navbar-nav>
-          <b-nav-item class="text-right pr-3 X" href="#" @click="toggleMenu">X</b-nav-item>
+          <b-nav-item class="text-right pr-5 X" href="#" @click="toggleMenu">X</b-nav-item>
           <b-nav-item v-for="i in menuOptions" :key="i.title" class="ml-3 mt-1" :href="i.href" @click="handleMenuClick(i)" >
             <router-link v-if="i.title === 'NOSOTROS EN LOS MEDIOS'" :to="i.href" class="nav-link">
             {{ i.title }}

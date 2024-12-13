@@ -50,7 +50,7 @@ export default {
 h1 {
   font-family: Rubik, Helvetica, Arial, sans-serif !important;
   font-weight: bold;
-  font-size: 60px;
+  font-size: 48px;
 }
 
 .image-container {
