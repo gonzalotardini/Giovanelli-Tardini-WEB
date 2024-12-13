@@ -9,7 +9,7 @@
         </p>
         <p><i class="bi bi-whatsapp"></i> +54 9 11 5767-2793</p>
         <p><i class="bi bi-envelope"></i> tuabogadoresponde@gmail.com</p>
-        <script language="JavaScript" type="text/javascript">TrustLogo("https://micuenta.donweb.com/img/sectigo_positive_sm.png", "CL1", "none");</script><a href="https://donweb.com/es-ar/certificados-ssl" id="comodoTL" title="Certificados SSL Argentina">Certificados SSL Argentina</a>      </b-col>
+      </b-col>
       <b-col>
         <b-row>
             <p><i class="bi bi-whatsapp mr-2"></i></p>
