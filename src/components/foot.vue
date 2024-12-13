@@ -8,7 +8,7 @@
             López, Provincia de Buenos Aires
           </p>
           <p><i class="bi bi-whatsapp"></i> +54 9 11 5767-2793</p>
-          <p><i class="bi bi-envelope"></i> tuabogadoresponde@gmail.com</p>
+          <p><i class="bi bi-envelope"></i> estudio@giovanellitardini.com.ar</p>
         </b-col>
         <b-col>
           <b-row>
