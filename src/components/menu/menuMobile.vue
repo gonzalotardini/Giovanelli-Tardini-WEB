@@ -17,7 +17,12 @@
       <div class="nav-bar" :class="{'mobile-menu': true, 'show': isMenuOpen}" id="nav-collapse">
         <b-navbar-nav>
           <b-nav-item class="text-right pr-3 X" href="#" @click="toggleMenu">X</b-nav-item>
-          <b-nav-item v-for="i in menuOptions" :key="i.title" class="ml-3 mt-1" :href="i.href" @click="toggleMenu">{{i.title}}</b-nav-item>
+          <b-nav-item v-for="i in menuOptions" :key="i.title" class="ml-3 mt-1" :href="i.href" @click="handleMenuClick(i)" >
+            <router-link v-if="i.title === 'NOSOTROS EN LOS MEDIOS'" :to="i.href" class="nav-link">
+            {{ i.title }}
+          </router-link>
+          <a v-else :href="i.href" class="nav-link">{{ i.title }}</a>
+          </b-nav-item>
         </b-navbar-nav>
       </div>
     </b-navbar>
@@ -41,7 +46,27 @@
       },
       changeLanguage() {
         // Lógica para cambiar el idioma
+      },
+      handleMenuClick(option) {
+      // Si estamos en la página "Nosotros en los Medios", navegamos a la home primero
+      if (this.$route.path === '/en-medios' && option.href && option.href.startsWith('#')) {
+        this.$router.push('/').then(() => {
+          this.$nextTick(() => {
+            const section = document.querySelector(option.href);
+            if (section) {
+              section.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        });
+      } else if (option.href && option.href.startsWith('#')) {
+        // Si estamos en la home, hacemos scroll al ancla
+        const section = document.querySelector(option.href);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
       }
+      this.toggleMenu();
+    }
     }
   }
   </script>
