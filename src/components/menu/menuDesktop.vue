@@ -7,8 +7,6 @@
     :class="{ 'navbar-shrink': isShrunk }"
   >
     <b-navbar-brand href="#">
-      <!-- <img src="@/assets/icons/logo.png" alt="Logo" class="d-inline-block align-top" height="30" /> -->
-
       GIOVANELLI & TARDINI
     </b-navbar-brand>
 
@@ -16,13 +14,20 @@
       class="d-flex w-100 justify-content-between align-items-center"
     >
       <div class="mx-auto d-flex justify-content-center">
+        <!-- Usar router-link solo para la opción "NOSOTROS EN LOS MEDIOS" -->
         <b-nav-item
           v-for="i in menuOptions"
           :key="i.title"
           class="ml-3 mt-1"
-          :href="i.href"
-          >{{ i.title }}</b-nav-item
+          @click="handleMenuClick(i)"
         >
+          <!-- Si la opción es "NOSOTROS EN LOS MEDIOS", usamos router-link -->
+          <router-link v-if="i.title === 'NOSOTROS EN LOS MEDIOS'" :to="i.href" class="nav-link">
+            {{ i.title }}
+          </router-link>
+          <!-- Si la opción es un ancla, usamos un enlace tradicional -->
+          <a v-else :href="i.href" class="nav-link">{{ i.title }}</a>
+        </b-nav-item>
       </div>
 
       <div class="d-flex align-items-center">
@@ -33,8 +38,8 @@
     </b-navbar-nav>
   </b-navbar>
 </template>
-  
-  <script>
+
+<script>
 export default {
   data() {
     return {
@@ -65,10 +70,29 @@ export default {
         this.isShrunk = false;
       }
     },
+    handleMenuClick(option) {
+      // Si estamos en la página "Nosotros en los Medios", navegamos a la home primero
+      if (this.$route.path === '/en-medios' && option.href && option.href.startsWith('#')) {
+        this.$router.push('/').then(() => {
+          this.$nextTick(() => {
+            const section = document.querySelector(option.href);
+            if (section) {
+              section.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        });
+      } else if (option.href && option.href.startsWith('#')) {
+        // Si estamos en la home, hacemos scroll al ancla
+        const section = document.querySelector(option.href);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
   },
 };
 </script>
-  
+
 <style scoped>
 /* Estilo de opciones de menú */
 a.navbar-brand,

@@ -1,36 +1,23 @@
 <template>
   <div id="app">
-    <a href="https://wa.me/5491164072793?text=Hola%20quisiera%20más%20información" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/5491157672793?text=Hola%20quisiera%20más%20información" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
       <i class="bi bi-whatsapp"></i>
     </a>
     <menuDesktop v-if="isDesktop" />
     <menuMobile v-else />
-    <inicio />
-    <areas />
-    <clientes/>
-    <conctact />
-    <footerr />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import menuDesktop from './components/menu/menuDesktop.vue';
 import menuMobile from './components/menu/menuMobile.vue';
-import inicio from './components/inicio.vue';
-import areas from './components/areas.vue';
-import conctact from './components/contact.vue';
-import clientes from './components/clientes.vue';
-import footerr from './components/footer.vue';
+
 export default {
   name: 'App',
   components: {
     menuDesktop,
     menuMobile,
-    inicio,
-    areas,
-    conctact,
-    footerr,
-    clientes
   },
   data() {
     return {

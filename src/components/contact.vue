@@ -8,7 +8,7 @@
             <i class="bi bi-geo-alt-fill"></i> Arenales 554, B1638 Vicente
             López, Provincia de Buenos Aires
           </p>
-          <p><i class="bi bi-whatsapp"></i> +54 9 11 6407-2793</p>
+          <p><i class="bi bi-whatsapp"></i> +54 9 11 5767-2793</p>
           <p><i class="bi bi-envelope"></i> tuabogadoresponde@gmail.com</p>
           <div class="map">
             <iframe
