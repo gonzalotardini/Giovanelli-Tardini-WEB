@@ -9,6 +9,8 @@ export default new Router({
   mode: 'history',
   routes: [
     { path: '/', name: 'Home', component: Home },
-    { path: '/en-medios', name: 'EnMedios', component: EnMedios }
+    { path: '/index.html', name: 'Home', component: Home },
+    { path: '/en-medios', name: 'EnMedios', component: EnMedios },
+    {path: '*',redirect: '/',},
   ]
 });
