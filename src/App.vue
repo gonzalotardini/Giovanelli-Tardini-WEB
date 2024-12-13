@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <a href="https://wa.me/5491234567890?text=Hola%20quisiera%20más%20información" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/5491164072793?text=Hola%20quisiera%20más%20información" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
       <i class="bi bi-whatsapp"></i>
     </a>
     <menuDesktop v-if="isDesktop" />
     <menuMobile v-else />
-    <home />
+    <inicio />
     <areas />
     <clientes/>
     <conctact />
@@ -16,7 +16,7 @@
 <script>
 import menuDesktop from './components/menu/menuDesktop.vue';
 import menuMobile from './components/menu/menuMobile.vue';
-import home from './components/home.vue';
+import inicio from './components/inicio.vue';
 import areas from './components/areas.vue';
 import conctact from './components/contact.vue';
 import clientes from './components/clientes.vue';
@@ -26,7 +26,7 @@ export default {
   components: {
     menuDesktop,
     menuMobile,
-    home,
+    inicio,
     areas,
     conctact,
     footerr,
