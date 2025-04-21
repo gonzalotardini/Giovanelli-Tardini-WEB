@@ -8,7 +8,7 @@
             López, Provincia de Buenos Aires
           </p>
           <p><i class="bi bi-whatsapp"></i> +54 9 11 5767-2793</p>
-          <p><i class="bi bi-envelope"></i> estudio@giovanellitardini.com.ar</p>
+          <p class="text-nowrap"><i class="bi bi-envelope"></i> estudio@giovanellitardini.com.ar</p>
           <a
             href="https://donweb.com/es-ar/certificados-ssl"
             title="Certificados SSL Argentina"
@@ -80,13 +80,17 @@ export default {
 </script>
 <style scoped>
 .footer {
-  background-color: #242632;
+  background-color: #37474f;
   min-height: 200px;
 }
 p {
-  color: rgb(124, 124, 124);
+  color: #FFFFFF;
 }
 a {
-  color: rgb(124, 124, 124) !important;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #90caf9; /* Celeste elegante para hover */
 }
 </style>

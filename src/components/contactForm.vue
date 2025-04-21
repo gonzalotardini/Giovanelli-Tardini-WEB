@@ -70,9 +70,14 @@
         ></b-form-textarea>
       </b-form-group>
 
-      <b-button class="btn-block" variant="dark" @click="sendMail()" :disabled="sendingMail">
+      <b-button
+        class="btn-block contact-btn"
+        @click="sendMail()"
+        :disabled="sendingMail"
+      >
         <b-spinner v-show="sendingMail" small></b-spinner>
-        ENVIAR</b-button>
+        ENVIAR
+      </b-button>
         <b-alert class="mt-3" variant="success" show v-show="successAlert">Tu consulta se envió correctamente. A la brevedad nos estaremos contactando con vos.</b-alert>
         <b-alert class="mt-3" variant="danger" show v-show="errorAlert">Se ha producido un error al completar la solicitud. Por favor intentá más tarde.</b-alert>
     </b-form>
@@ -141,10 +146,21 @@ export default {
 }
 
 .contact-btn {
-  background-color: #006b93 !important;
-  border-color: #006b93 !important;
+  background-color: #37474f !important;
+  border-color: #37474f !important;
+  border-radius: 1.5rem !important;
+  color: #fff !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
+.contact-btn:hover {
+  background-color: #455a64 !important;
+  border-color: #455a64 !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.03);
+  cursor: pointer;
+}
 input,
 textarea,
 .input-group-text {

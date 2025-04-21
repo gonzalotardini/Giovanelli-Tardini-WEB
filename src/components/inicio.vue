@@ -14,51 +14,23 @@
     >
       <!-- Slides with custom text -->
       <b-carousel-slide
-        clas="img-fluid"
+        class="img-fluid"
         :img-src="require('@/assets/torreView4.jpg')"
       >
         <div class="div-h">
-          <h1>Giovanelli & Tardini</h1>
-          <h4>Abogados</h4>
-          <!-- <h4>
-            Especialistas en accidentes de tránsito, ART, representación y
-            consumo.
-          </h4> -->
-          <b-btn href="#contacto" variant="outline-light mt-5"> CONTACTANOS </b-btn>
-
+          <h1 class="text-nowrap">GIOVANELLI & TARDINI</h1>
+          <h4>ABOGADOS</h4>
+          <b-btn href="#contacto" class="mt-4 custom-btn-dark"
+            ><i class="bi bi-envelope-fill mr-2"></i> CONTACTANOS</b-btn
+          >
         </div>
       </b-carousel-slide>
 
       <b-carousel-slide
-        class="img-fluid"
+        class="img-fluid d-flex align-items-center justify-content-center"
         :img-src="require('@/assets/socios.jpg')"
       >
       </b-carousel-slide>
-
-      <!-- Slides with image only -->
-      <!-- <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=58"></b-carousel-slide> -->
-
-      <!-- Slides with img slot -->
-      <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
-      <!-- <b-carousel-slide>
-          <template #img>
-            <img
-              class="d-block img-fluid w-100"
-              width="1024"
-              height="480"
-              src="https://picsum.photos/1024/480/?image=55"
-              alt="image slot"
-            >
-          </template>
-        </b-carousel-slide> -->
-
-      <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-      <!-- <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt
-            a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum.
-          </p>
-        </b-carousel-slide> -->
     </b-carousel>
   </div>
 </template>
@@ -95,6 +67,18 @@ export default {
   transform: translateY(-30%) !important;
   bottom: initial !important;
 }
+/* Ajuste de imagen */
+>>> .carousel-inner,
+>>> .carousel-item,
+>>> .carousel-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+#carousel {
+  height: 700px;
+}
 
 h1 {
   font-size: 65px;
@@ -105,25 +89,40 @@ h3 {
 }
 
 h4 {
-    font-size: 55px;
-    font-weight: 200;
+  font-size: 55px;
+  font-weight: 200;
+}
 
+.custom-btn-dark {
+  background-color: #37474f;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 12px 28px;
+  transition: all 0.3s ease;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.custom-btn-dark:hover {
+  background-color: #455a64;
+  transform: scale(1.05);
 }
 
 @media (max-width: 576px) {
-  >>> .img-fluid {
-    height: 290px !important; /* Ajusta según lo que consideres adecuado para móviles */
-  }
-  h1 {
-    font-size: 30px;
+  #carousel {
+    height: 290px;
   }
 
-  h3 {
-    font-size: 22px;
+  h1 {
+    font-size: 25px;
   }
 
   h4 {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 200;
   }
 }

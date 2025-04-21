@@ -1,40 +1,44 @@
 <template>
-  <b-container id="nuestrosClientes" class="py-5" fluid>
-    <h1 class="text-center pt-4 pb-5">Nuestros Clientes</h1>
-    <b-row>
-      <b-carousel
-        fade
-        v-model="slide"
-        :interval="4000"
-        controls
-        indicators
-        background=""
-        @sliding-start="onSlideStart"
-        @sliding-end="onSlideEnd"
-        class="pb-5"
-      >
-        <b-carousel-slide
-          v-for="(group, index) in groupedCards"
-          :key="index"
-          class="p-2"
+  <b-container id="nuestrosClientes" class="position-relative py-5" fluid>
+    <div class="background-image"></div>
+    <div class="content">
+      <h1 class="text-center pt-4 pb-5">Nuestros Clientes</h1>
+      <b-row>
+        <b-carousel
+          fade
+          v-model="slide"
+          :interval="4000"
+          controls
+          indicators
+          background=""
+          @sliding-start="onSlideStart"
+          @sliding-end="onSlideEnd"
+          class="pb-5"
         >
-          <b-row align-h="center">
-            <b-col v-for="(client, i) in group" :key="i" :cols="12" :md="4">
-              <clientCard :client="client" />
-            </b-col>
-          </b-row>
-        </b-carousel-slide>
-      </b-carousel>
-    </b-row>
-    <div class="text-center">
-      <b-btn
-        href="https://www.google.com.ar/maps/place/Estudio+Giovanelli+Tardini+%26+Asociados/@-36.8433184,-64.1911268,10z/data=!4m18!1m9!3m8!1s0xc72fea9ea35abcb:0xa0b1ebfead24ba7e!2sEstudio+Giovanelli+Tardini+%26+Asociados!8m2!3d-38.45155!4d-63.5989957!9m1!1b1!16s%2Fg%2F11kqv_x7h0!3m7!1s0xc72fea9ea35abcb:0xa0b1ebfead24ba7e!8m2!3d-38.45155!4d-63.5989957!9m1!1b1!16s%2Fg%2F11kqv_x7h0?entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D"
-        target="_blank"
-        size="lg"
-        variant="outline-light"
-      >
-        Mirá nuestra reseñas
-      </b-btn>
+          <b-carousel-slide
+            v-for="(group, index) in groupedCards"
+            :key="index"
+            class="p-2"
+          >
+            <b-row align-h="center">
+              <b-col v-for="(client, i) in group" :key="i" :cols="12" :md="4">
+                <clientCard :client="client" />
+              </b-col>
+            </b-row>
+          </b-carousel-slide>
+        </b-carousel>
+      </b-row>
+      <div class="text-center">
+        <b-btn
+          href="https://www.google.com.ar/maps/place/Estudio+Giovanelli+Tardini+%26+Asociados/@-36.8433184,-64.1911268,10z/data=!4m18!1m9!3m8!1s0xc72fea9ea35abcb:0xa0b1ebfead24ba7e!2sEstudio+Giovanelli+Tardini+%26+Asociados!8m2!3d-38.45155!4d-63.5989957!9m1!1b1!16s%2Fg%2F11kqv_x7h0!3m7!1s0xc72fea9ea35abcb:0xa0b1ebfead24ba7e!8m2!3d-38.45155!4d-63.5989957!9m1!1b1!16s%2Fg%2F11kqv_x7h0?entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D"
+          target="_blank"
+          size="lg"
+          class="custom-btn-dark"
+          variant="outline-light"
+        >
+          MIRÁ NUESTRAS RESEÑAS
+        </b-btn>
+      </div>
     </div>
   </b-container>
 </template>
@@ -55,42 +59,42 @@ export default {
           description:
             "Muy recomendable! La verdad unos genios! Trabajan de manera profesional y eficiente, resolvieron mi caso muy rápido y prolijo 👌…",
           starts: 5,
-          variant: "primary"
+          variant: "primary",
         },
         {
           title: "Facundo  Ahumada",
           description:
             "La verdad que son muy profesionales solucionaron mi caso muy rápido y pude dar solución a mi siniestro. Muchas gracias a los señores abogado. Excelente atención altamente recomendable. Sin dudar",
           stars: 5,
-          variant: "secondary"
+          variant: "secondary",
         },
         {
           title: "Verónica Russo",
           description:
             "Excelente servicio ... te ayudan desde un lugar profesional pero también humano ... se toman el tiempo de responder sin problema y te sacan todas las dudas que puedas tener..muy agradecida",
           stars: 5,
-          variant: "success"
+          variant: "success",
         },
         {
           title: "Abel Ojeda",
           description:
             "la verdad unos genios son de confianza, trabajan con profesionales en todo aspecto te ponen en contexto cada paso en tu caso, en menos de 40 días me abonaron lo justo a mi caso, ya tiene un cliente fijo y para recomendar a mas gente ",
           stars: 5,
-          variant: "info"
+          variant: "info",
         },
         {
           title: "Pablo Gronski",
           description:
             "Me resolvieron un caso complicado en poco tiempo y con una solución inmediata.  Excelente atención y respuestas rápidas.",
           stars: 5,
-          variant: "warning"
+          variant: "warning",
         },
         {
           title: "Martin Aguero",
           description:
             "Tuve un accidente vehicular en 2021. Tuve una mala asesoría. Los contacte y pese a los años que pasaron me los resolvieron en un mes y medio. Siempre informándome de la situación. La verdad son excelentes. Muchas gracias!!!",
           stars: 5,
-          variant: "danger"
+          variant: "danger",
         },
       ],
       isMobile: window.innerWidth <= 768,
@@ -142,13 +146,53 @@ export default {
   text-align: center;
 }
 
-.container-fluid {
-  /* background-color: #343a40; */
-  background-image: url("../assets/acuerdo.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/acuerdo1.jpg");
   background-size: cover;
-  background-position: center center;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  filter: blur(2px) brightness(0.5);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(192, 57, 43, 0.4); /* rojo semitransparente */
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2; /* Ahora el contenido está arriba */
+}
+
+.custom-btn-dark {
+  background-color: #37474f;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 12px 28px;
+  transition: all 0.3s ease;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.custom-btn-dark:hover {
+  background-color: #455a64;
+  transform: scale(1.05);
+  color: #fff;
 }
 
 @media (max-width: 576px) {
@@ -163,5 +207,6 @@ img {
 
 h1 {
   color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 </style>

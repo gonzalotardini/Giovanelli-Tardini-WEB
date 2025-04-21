@@ -7,7 +7,7 @@
     :class="{ 'navbar-shrink': isShrunk }"
   >
     <b-navbar-brand href="#">
-      GIOVANELLI & TARDINI
+      <img :class="{ 'img-shrink': isShrunk }" src="@/assets/logo.png" class="ml-2" id=logo alt="L" height="75" />
     </b-navbar-brand>
 
     <b-navbar-nav
@@ -30,11 +30,11 @@
         </b-nav-item>
       </div>
 
-      <div class="d-flex align-items-center">
+      <!-- <div class="d-flex align-items-center">
         <b-nav-item href="#" @click="changeLanguage('es')">ES</b-nav-item>
         <span class="mx-1">|</span>
         <b-nav-item href="#" @click="changeLanguage('en')">EN</b-nav-item>
-      </div>
+      </div> -->
     </b-navbar-nav>
   </b-navbar>
 </template>
@@ -111,7 +111,7 @@ a.nav-link {
 }
 
 .navbar {
-  background-color: #343a40 !important;
+  background-color: #37474f !important;
   height: 120px;
   transition: height .400s ease;
 }
@@ -146,6 +146,11 @@ a.nav-link:hover {
 .navbar-shrink {
   padding: 0.5rem;
   height: 80px;
+}
+
+.img-shrink {
+  max-height: 50px;
+  margin-left: 10%;
 }
 
 .navbar-shrink .navbar-brand,

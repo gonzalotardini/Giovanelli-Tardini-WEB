@@ -1,13 +1,12 @@
 <template>
     <b-navbar toggleable="lg" type="dark" variant="dark">
       <b-navbar-brand href="#">
-        <!-- <img src="@/assets/icons/logo.png" alt="Logo" class="d-inline-block align-top" height="30" /> -->
-        GIOVANELLI & TARDINI
+        <img src="@/assets/logoMobile.png" alt="Logo" class="d-inline-block align-top" height="30" />
       </b-navbar-brand>
   
       <!-- Contenedor para el texto "ES | EN" y el toggle -->
       <div class="navbar-right">
-        <span class="language-options">ES | EN</span>
+        <!-- <span class="language-options">ES | EN</span> -->
         <!-- Toggle para mobile (hamburguesa y cruz) -->
         <b-navbar-toggle target="nav-bar" @click="toggleMenu">
         </b-navbar-toggle>
@@ -92,7 +91,7 @@
     right: 0;
     width: 100%;
     height: 100%; /* Asegura que ocupe el 100% de la altura visible */
-    background-color: #343a40;
+    background-color: #37474f;
     z-index: 1050;
     transition: transform 0.3s ease-in-out;
     transform: translateX(100%); /* Inicialmente fuera de la pantalla */

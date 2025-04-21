@@ -67,4 +67,10 @@ html {
   padding: 10px;
   vertical-align: text-top !important;
 }
+.whatsapp-float:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
 </style>
